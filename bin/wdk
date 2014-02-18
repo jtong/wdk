@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
-require 'wdk/wdk_generator'
+require 'wdk/wdk_cli'
 
-WDKGeneratorMain.start
+WDK_Cli.start
 
