@@ -4,8 +4,8 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'wdk/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "wdk"
-  spec.version       = Wdk::VERSION
+  spec.name          = "web-development-kit"
+  spec.version       = WDK::VERSION
   spec.authors       = ["jtong"]
   spec.email         = ["jtong.kata@gmail.com"]
   spec.description   = %q{web development kit}
@@ -22,5 +22,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rake"
 
   spec.add_runtime_dependency "thor"
+  spec.add_runtime_dependency "jt-mobile-kit"
   spec.add_runtime_dependency "jt-mobile-kit-generator"
+
 end
