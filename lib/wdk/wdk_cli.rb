@@ -1,5 +1,7 @@
 require 'thor'
 require 'thor/group'
+require 'tilt'
+require 'haml'
 require 'jt-mobile-kit-generator/jt_generator'
 
 require "wdk/www_rb/www_rb"
