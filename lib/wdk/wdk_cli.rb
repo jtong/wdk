@@ -1,7 +1,9 @@
 require 'thor'
+require 'thor/group'
 require 'jt-mobile-kit-generator/jt_generator'
 
 require "wdk/www_rb/www_rb"
+require "wdk/wdk_render"
 
 class WDK_Cli < Thor
 
@@ -14,6 +16,12 @@ class WDK_Cli < Thor
   def new project_name
     WwwRb.start [:new, project_name]
   end
+
+  desc :render, "generate static file"
+  def render
+    WDK_Render.start
+  end
+
 end
 
 
