@@ -1,2 +1,2 @@
 #!/bin/sh
-rvm use ruby-1.9.3-p194@mobile
+rvm use ruby-2.0.0-p247@wdk-dev

@@ -25,5 +25,6 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency "tilt"
   spec.add_runtime_dependency "haml"
   spec.add_runtime_dependency "jt-mobile-kit-generator"
+  spec.add_runtime_dependency "wdk-view-toolkit"
 
 end

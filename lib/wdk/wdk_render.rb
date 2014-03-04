@@ -1,3 +1,4 @@
+
 class WDK_Render < Thor::Group
   include Thor::Actions
   source_root "./"
@@ -24,7 +25,7 @@ class WDK_Render < Thor::Group
     Dir.glob haml_pages do |file|
       output_path = File.dirname(file)
       output_file_name = File.basename(file, File.extname(file))
-      output = Tilt.new(file).render
+      output = Tilt.new(file).render ViewRenderScope.new
       create_file "#{output_path}/#{output_file_name}.html", output
     end
 

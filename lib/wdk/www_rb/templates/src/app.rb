@@ -1,16 +1,10 @@
 ENV['RACK_ENV'] ||= "development"
 
+require 'sass'
 require 'sinatra'
+require "sinatra/reloader"
 require 'haml'
-require 'moode-haml-toolkit/component_helper'
-require 'jt-partial'
-if File.exist? "component/custom.rb"
-  load "component/custom.rb"
-end
-require 'moode-haml-toolkit/component_generator'
-
-require 'moode-haml-component-angular'
-
+require 'wdk-view-toolkit/view_render'
 
 configure do
   set :views, File.join(File.dirname(__FILE__), 'hamls')
@@ -18,9 +12,14 @@ configure do
 end
 
 get "/" do
-  haml :index
+  haml :index, {:scope => ViewRenderScope.new, :escape_attrs => false}
 end
 
 get "/pages/:name.html" do
-  haml "pages/#{params[:name]}".to_sym
+  haml "pages/#{params[:name]}".to_sym, {:scope => ViewRenderScope.new, :escape_attrs => false}
+end
+
+#coral ui
+get "/res/coral-ui/css/:name.css" do
+  sass "/res/coral-ui/css/sass/#{params[:name]}".to_sym, { views: File.join(File.dirname(__FILE__))}
 end

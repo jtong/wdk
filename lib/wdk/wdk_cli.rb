@@ -6,6 +6,7 @@ require 'jt-mobile-kit-generator/jt_generator'
 
 require "wdk/www_rb/www_rb"
 require "wdk/wdk_render"
+require "wdk-view-toolkit/view_render"
 
 class WDK_Cli < Thor
 
