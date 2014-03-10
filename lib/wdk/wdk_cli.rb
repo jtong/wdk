@@ -23,6 +23,7 @@ class WDK_Cli < Thor
   desc :render, "generate static file"
   def render
     WDK_Render.start
+    `rake gen:after`
   end
 
 end

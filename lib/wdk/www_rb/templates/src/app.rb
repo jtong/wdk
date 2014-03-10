@@ -7,7 +7,7 @@ require 'haml'
 require 'wdk-view-toolkit/view_render'
 
 configure do
-  set :views, File.join(File.dirname(__FILE__), 'hamls')
+  set :views, File.join(File.dirname(__FILE__), 'view')
   set :public_folder, File.dirname(__FILE__)
 end
 
